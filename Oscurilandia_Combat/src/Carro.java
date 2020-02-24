@@ -1,4 +1,4 @@
-
+//carroo
 public class Carro {
 	private int cantidadOcupantes;
 	private String fechaIngreso;
