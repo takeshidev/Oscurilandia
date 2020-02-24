@@ -1,4 +1,4 @@
-
+//hola
 
 public class Trupalla extends Carro {
 	private int armadura;
