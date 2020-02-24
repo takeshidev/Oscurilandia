@@ -26,6 +26,6 @@ public class Caguano extends Carro {
 	public void setColorConfetti(String colorConfetti) {
 		this.colorConfetti = colorConfetti;
 	}
-
+//d
 }
 
