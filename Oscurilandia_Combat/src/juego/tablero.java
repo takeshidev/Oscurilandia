@@ -4,9 +4,11 @@ import java.io.ObjectInputStream.GetField;
 import java.util.*;
 
 public class tablero{
-	public static void main(String[] args) {
+	
 	String[][] tablero = new String[15][15];
 	ArrayList <Huevo> tiros = new ArrayList<Huevo>();
+	public static void main(String[] args) {
+
 	
 		for(int i = 0; i < tablero.length; i++ ) {
 		for(int j = 0; j < tablero.length; j++ ) {
