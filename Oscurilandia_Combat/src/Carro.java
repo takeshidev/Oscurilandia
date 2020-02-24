@@ -16,6 +16,15 @@ public class Carro {
 	public Carro(int cantidadOcupantes, String fechaIngreso, int fila, int columna) {
 		this();
 	}
+	
+	//Metodos
+	public int CrearCoodenadaFila(int fila) {
+		return fila = (int)Math.floor((Math.random()*15+1));
+	}
+	
+	public int CrearCoordenadaColumna(int columna) {
+		return columna = (int)Math.floor((Math.random()*15+1));
+	}
 
 	// Getters and Setters
 	public int getCantidadOcupantes() {
