@@ -5,7 +5,7 @@ public class Huevo {
 	private int fila;
 	private int columna;
 	private int puntaje = 0;
-	private String codigo = "H";
+	private String codigo = "[H]";
 	
 	public Huevo() {
 		}

@@ -4,10 +4,12 @@ import java.util.*;
 
 public class Menu {
 
+	
 	public static void crearMenu() {
 		boolean salir = false;
 		escribir("BIENVENIDO AL COMBATE");
-		
+		Tablero tablero2 = new Tablero();
+		tablero2.mostrarTablero();
 		while (!salir) {
 
 			escribir("1. Tirar huevo");
@@ -20,14 +22,16 @@ public class Menu {
 			switch (op) {
 			case 1:
 				escribir("Tirando huevo...");
-
+				tablero2.tirarHuevo();
 				break;
 			case 2:
 				escribir("Mostrando tablero");
+				tablero2.mostrarTablero();
 				break;
 			case 3:
 				break;
 			case 4:
+				escribir("Hasta la vista beibi...");
 				salir = true;
 				break;
 			}
