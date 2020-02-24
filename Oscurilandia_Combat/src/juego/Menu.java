@@ -1,44 +1,46 @@
 package juego;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Menu {
 
-	boolean salir = false;
+	public void CrearMenu() {
+		boolean salir = false;
 
-	while(!salir) {
+		while (!salir) {
 
-		escribir("1. Tirar huevo");
-		escribir("2. Mostrar tablero");
-		escribir("3. Mostrar puntaje");
-		escribir("4. Salir");
+			escribir("1. Tirar huevo");
+			escribir("2. Mostrar tablero");
+			escribir("3. Mostrar puntaje");
+			escribir("4. Salir");
 
-		int op = (int) leerNumeros("Ingrese una opcion:");
+			int op = (int) leerNumeros("Ingrese una opcion:");
 
-		switch (op) {
-		case 1:
-			escribir("Tirando huevo...");
+			switch (op) {
+			case 1:
+				escribir("Tirando huevo...");
 
-			break;
-		case 2:
-			escribir("Mostrando tablero");
-			break;
-		case 3:
-			break;
-		case 4:
-			salir = true;
-			break;
+				break;
+			case 2:
+				escribir("Mostrando tablero");
+				break;
+			case 3:
+				break;
+			case 4:
+				salir = true;
+				break;
+			}
 		}
 	}
 
 	public static void escribir(String mensaje) {
-	System.out.println(mensaje);
-}
+		System.out.println(mensaje);
+	}
 
-public static int leerNumeros(String mensaje) {
-	escribir(mensaje);
-	Scanner sc = new Scanner(System.in);
-	return sc.nextInt();
-}
+	public static int leerNumeros(String mensaje) {
+		escribir(mensaje);
+		Scanner sc = new Scanner(System.in);
+		return sc.nextInt();
+	}
 
 }// menu

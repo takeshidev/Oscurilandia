@@ -7,7 +7,8 @@ public class Ejecutable {
 	public static void main(String[] args) {
 		
 		escribir("BIENVENIDO AL COMBATE");
-
+		CrearMenu();
+		
 	}
 
 	public static void escribir(String mensaje) {
