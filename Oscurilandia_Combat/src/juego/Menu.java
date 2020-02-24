@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Menu {
 
-	public void CrearMenu() {
+	public static void crearMenu() {
 		boolean salir = false;
 
 		while (!salir) {

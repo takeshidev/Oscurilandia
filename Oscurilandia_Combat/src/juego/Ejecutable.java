@@ -2,12 +2,12 @@ package juego;
 
 import java.util.Scanner;
 
-public class Ejecutable {
+public class Ejecutable extends Menu{
 
 	public static void main(String[] args) {
 		
 		escribir("BIENVENIDO AL COMBATE");
-		CrearMenu();
+		crearMenu();
 		
 	}
 
