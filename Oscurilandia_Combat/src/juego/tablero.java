@@ -5,6 +5,7 @@ import java.util.*;
 
 public class tablero{
 	
+	
 	String[][] tablero = new String[15][15];
 	ArrayList <Huevo> tiros = new ArrayList<Huevo>();
 	public static void main(String[] args) {

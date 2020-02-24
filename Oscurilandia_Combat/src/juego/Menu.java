@@ -6,7 +6,8 @@ public class Menu {
 
 	public static void crearMenu() {
 		boolean salir = false;
-
+		escribir("BIENVENIDO AL COMBATE");
+		
 		while (!salir) {
 
 			escribir("1. Tirar huevo");
