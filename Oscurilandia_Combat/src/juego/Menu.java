@@ -9,6 +9,7 @@ public class Menu {
 		boolean salir = false;
 		Utiles.escribir("BIENVENIDO AL COMBATE");
 		Tablero tablero = new Tablero();
+		tablero.ponerCarro();
 		tablero.mostrarTablero();
 //Inicio del menu----------------------------------------
 		while (!salir) {

@@ -1,3 +1,4 @@
+package juego;
 //hola
 
 public class Trupalla extends Carro {
@@ -6,9 +7,20 @@ public class Trupalla extends Carro {
 
 	// Constructor
 	public Trupalla() {
-		this.armadura = armadura;
-		this.nombreConductor = nombreConductor;
+		super(2, "2015");
+		this.armadura = 1;
+		this.nombreConductor = "Trupallero";
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Trupalla [armadura=" + armadura + ", nombreConductor=" + nombreConductor + ", cantidadOcupantes="
+				+ cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + "]" + getColumna() + ""+ getFila();
+	}
+
+
 
 	// Getters and Setters
 	public int getArmadura() {

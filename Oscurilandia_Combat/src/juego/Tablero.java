@@ -5,6 +5,7 @@ import java.util.*;
 public class Tablero {
 	
 	static String[][] tablero = new String[15][15];
+	static Carro[] carros = new Carro[18];
 	ArrayList <Huevo> tiros = new ArrayList<Huevo>();
 	
 
@@ -46,6 +47,12 @@ public class Tablero {
 		tiros.add(h1);
 	}
 
+	public void ponerCarro() {
+		Trupalla c1 = new Trupalla();
+		tablero[c1.getFila()][c1.getColumna()]="[T]";
+		carros[0]= c1;
+		System.out.println(c1.toString());
+	}
 	
 	/**
 	 * Verifica las coordenadas del tiro en el tablero e indica si es un tiro repetido

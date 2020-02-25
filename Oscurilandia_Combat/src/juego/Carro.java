@@ -1,29 +1,22 @@
+package juego;
+import juego.Utiles;
+
 //carroo
 public class Carro {
-	private int cantidadOcupantes;
-	private String fechaIngreso;
+	protected int cantidadOcupantes;
+	protected String fechaIngreso;
 	private int fila;
 	private int columna;
 
 	// Constructor
-	public Carro() {
+	public Carro(int cantidadOcupantes, String fechaIngreso) {
 		this.cantidadOcupantes = cantidadOcupantes;
 		this.fechaIngreso = fechaIngreso;
-		this.fila = fila;
-		this.columna = columna;
-	}
-
-	public Carro(int cantidadOcupantes, String fechaIngreso, int fila, int columna) {
-		this();
-	}
-	
-	//Metodos
-	public int CrearCoodenadaFila(int fila) {
-		return fila = (int)Math.floor((Math.random()*15+1));
-	}
-	
-	public int CrearCoordenadaColumna(int columna) {
-		return columna = (int)Math.floor((Math.random()*15+1));
+				
+		this.fila = Utiles.generaRandom(14, 0);
+		this.columna = Utiles.generaRandom(14, 0);
+		
+		
 	}
 
 	// Getters and Setters
