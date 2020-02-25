@@ -9,6 +9,7 @@ public class Menu {
 		boolean salir = false;
 		Utiles.escribir("BIENVENIDO AL COMBATE");
 		Tablero tablero = new Tablero();
+		tablero.ponerKromis();
 		tablero.ponerTrupallas();
 		tablero.mostrarTablero();
 		
@@ -36,7 +37,8 @@ public class Menu {
 			case 3:
 				Utiles.escribir("Mostrando puntaje");
 				tablero.listarTiros();
-			tablero.mostrarIntentos();
+				tablero.mostrarIntentos();
+				tablero.mostrarPuntaje();
 				break;
 			case 4:
 				Utiles.escribir("Hasta la vista beibi...");

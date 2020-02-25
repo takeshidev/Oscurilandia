@@ -1,3 +1,4 @@
+package juego;
 //kromii
 
 public class Kromi extends Carro {
@@ -7,8 +8,15 @@ public class Kromi extends Carro {
 
 	// Constructor
 	public Kromi() {
-		this.anioFab = anioFab;
-		this.marca = marca;
+		super(10, "2001");
+		this.anioFab = "2000";
+		this.marca = "Chancho";
+	}
+
+	@Override
+	public String toString() {
+		return "Kromi [anioFab=" + anioFab + ", marca=" + marca + ", cantidadOcupantes=" + cantidadOcupantes
+				+ ", fechaIngreso=" + fechaIngreso + "]"+ getColumna() + "-"+ getFila();
 	}
 
 	// Getters and Setters
