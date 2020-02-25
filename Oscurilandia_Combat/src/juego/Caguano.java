@@ -1,3 +1,4 @@
+package juego;
 //caguano
 public class Caguano extends Carro {
 
@@ -6,6 +7,7 @@ public class Caguano extends Carro {
 
 	// Constructor
 	public Caguano() {
+		super(3, "2010");
 		this.alcanceTiro = alcanceTiro;
 		this.colorConfetti = colorConfetti;
 	}
@@ -13,6 +15,12 @@ public class Caguano extends Carro {
 	// ToString
 	public int getAlcanceTiro() {
 		return alcanceTiro;
+	}
+
+	@Override
+	public String toString() {
+		return "Caguano [alcanceTiro=" + alcanceTiro + ", colorConfetti=" + colorConfetti + ", cantidadOcupantes="
+				+ cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + "]"+ getColumna() + "-"+ getFila();
 	}
 
 	public void setAlcanceTiro(int alcanceTiro) {

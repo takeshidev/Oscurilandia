@@ -102,7 +102,24 @@ public class Tablero {
 
 
 	public void ponerCaguano() {
-		
+		for (int i = 0; i < 5; i++) {
+			Caguano caguano = new Caguano();
+			carros.add(caguano);
+			caguano.setColumna(Utiles.generaRandom(13, 0));
+			
+			if (verificaVacio(caguano.getFila(), caguano.getColumna())) {
+				tablero[caguano.getFila()][caguano.getColumna()] = "[C]";
+				tablero[caguano.getFila()][caguano.getColumna()+1] = "[C]";
+			} else {
+				while (!verificaVacio(caguano.getFila(), caguano.getColumna())) {
+					caguano.setFila(Utiles.generaRandom(14, 0));
+					caguano.setColumna(Utiles.generaRandom(13, 0));
+					tablero[caguano.getFila()][caguano.getColumna()] = "[C]";
+					tablero[caguano.getFila()][caguano.getColumna()+1] = "[C]";
+				}
+			}
+			System.out.println(caguano.toString());
+		}
 	}
 	
 	public boolean verificaVacio(int x, int y) {

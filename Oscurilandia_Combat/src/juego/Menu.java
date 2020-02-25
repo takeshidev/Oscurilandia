@@ -10,6 +10,7 @@ public class Menu {
 		Utiles.escribir("BIENVENIDO AL COMBATE");
 		Tablero tablero = new Tablero();
 		tablero.ponerKromis();
+		tablero.ponerCaguano();
 		tablero.ponerTrupallas();
 		tablero.mostrarTablero();
 		
