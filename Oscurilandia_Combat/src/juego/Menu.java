@@ -1,5 +1,6 @@
 package juego;
 
+import java.awt.Toolkit;
 import java.util.*;
 
 public class Menu {
@@ -13,17 +14,18 @@ public class Menu {
 //Inicio del menu----------------------------------------
 		while (!salir) {
 
-			Utiles.escribir("1. Tirar huevo");
-			Utiles.escribir("2. Mostrar tablero");
-			Utiles.escribir("3. Mostrar puntaje");
-			Utiles.escribir("4. Salir");
+			Utiles.escribir("  1. Tirar huevo");
+			Utiles.escribir("  2. Mostrar tablero");
+			Utiles.escribir("  3. Mostrar puntaje");
+			Utiles.escribir("  4. Salir");
 
 			int op = (int) Utiles.leerNumeros("Ingrese una opcion:");
 
 			switch (op) {
 			case 1:
-				Utiles.escribir("Tirando huevo...");
+				Utiles.escribir("Preparandose para lanzar huevo...");
 				tablero.tirarHuevo();
+				Toolkit.getDefaultToolkit().beep();
 				break;
 			case 2:
 				Utiles.escribir("Mostrando tablero");
@@ -31,6 +33,7 @@ public class Menu {
 				break;
 			case 3:
 				Utiles.escribir("Mostrando puntaje");
+				tablero.listarTiros();
 				break;
 			case 4:
 				Utiles.escribir("Hasta la vista beibi...");
