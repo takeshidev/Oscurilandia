@@ -7,46 +7,40 @@ public class Menu {
 	
 	public static void crearMenu() {
 		boolean salir = false;
-		escribir("BIENVENIDO AL COMBATE");
-		Tablero tablero2 = new Tablero();
-		tablero2.mostrarTablero();
+		Utiles.escribir("BIENVENIDO AL COMBATE");
+		Tablero tablero = new Tablero();
+		tablero.mostrarTablero();
+//Inicio del menu----------------------------------------
 		while (!salir) {
 
-			escribir("1. Tirar huevo");
-			escribir("2. Mostrar tablero");
-			escribir("3. Mostrar puntaje");
-			escribir("4. Salir");
+			Utiles.escribir("1. Tirar huevo");
+			Utiles.escribir("2. Mostrar tablero");
+			Utiles.escribir("3. Mostrar puntaje");
+			Utiles.escribir("4. Salir");
 
-			int op = (int) leerNumeros("Ingrese una opcion:");
+			int op = (int) Utiles.leerNumeros("Ingrese una opcion:");
 
 			switch (op) {
 			case 1:
-				escribir("Tirando huevo...");
-				tablero2.tirarHuevo();
+				Utiles.escribir("Tirando huevo...");
+				tablero.tirarHuevo();
 				break;
 			case 2:
-				escribir("Mostrando tablero");
-				tablero2.mostrarTablero();
+				Utiles.escribir("Mostrando tablero");
+				tablero.mostrarTablero();
 				break;
 			case 3:
+				Utiles.escribir("Mostrando puntaje");
 				break;
 			case 4:
-				escribir("Hasta la vista beibi...");
+				Utiles.escribir("Hasta la vista beibi...");
 				salir = true;
 				break;
-			}
-		}
-	}
+			}//switch
+		}//while
+	}// crearMenu
 
-	public static void escribir(String mensaje) {
-		System.out.println(mensaje);
-	}
 
-	public static int leerNumeros(String mensaje) {
-		escribir(mensaje);
-		Scanner sc = new Scanner(System.in);
-		return sc.nextInt();
-	}
 
-}// menu
-//
+}// Class menu
+
