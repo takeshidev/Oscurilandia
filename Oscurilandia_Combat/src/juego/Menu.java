@@ -4,7 +4,7 @@ import java.awt.Toolkit;
 import java.util.*;
 
 public class Menu {
-
+//hola
 	
 	public static void crearMenu() {
 		boolean salir = false;
@@ -18,7 +18,7 @@ public class Menu {
 			Utiles.escribir("  2. Mostrar tablero");
 			Utiles.escribir("  3. Mostrar puntaje");
 			Utiles.escribir("  4. Salir");
-
+ 
 		try {	
 			int op = (int) Utiles.leerNumeros("Ingrese una opcion:");
 
