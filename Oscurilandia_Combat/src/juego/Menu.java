@@ -19,6 +19,7 @@ public class Menu {
 			Utiles.escribir("  3. Mostrar puntaje");
 			Utiles.escribir("  4. Salir");
 
+		try {	
 			int op = (int) Utiles.leerNumeros("Ingrese una opcion:");
 
 			switch (op) {
@@ -40,6 +41,10 @@ public class Menu {
 				salir = true;
 				break;
 			}//switch
+		} catch (InputMismatchException e) {
+			Utiles.escribir("Ocurrió un error :(. Debes ingresar una opción.");
+		}
+			
 		}//while
 	}// crearMenu
 

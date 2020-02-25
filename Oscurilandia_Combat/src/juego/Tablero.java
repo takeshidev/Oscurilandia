@@ -22,7 +22,7 @@ public class Tablero {
 	 */
 	public void mostrarTablero() {
 		for (int i = 0; i < tablero.length; i++) {
-			System.out.printf("%-3s", i);
+			System.out.printf("%3s", i);
 		}
 		System.out.println("");
 		for(int i = 0; i < tablero.length; i++ ) {
