@@ -9,9 +9,9 @@ public class Menu {
 		boolean salir = false;
 		Utiles.escribir("BIENVENIDO AL COMBATE");
 		Tablero tablero = new Tablero();
-		tablero.ponerCarro();
+		tablero.ponerTrupallas();
 		tablero.mostrarTablero();
-		Marcador marcador =new Marcador();
+		
 //Inicio del menu----------------------------------------
 		while (!salir) {
 
@@ -36,7 +36,7 @@ public class Menu {
 			case 3:
 				Utiles.escribir("Mostrando puntaje");
 				tablero.listarTiros();
-				System.out.println(marcador.getIntentos());
+			tablero.mostrarIntentos();
 				break;
 			case 4:
 				Utiles.escribir("Hasta la vista beibi...");

@@ -46,14 +46,65 @@ public class Tablero {
 		verificaCoordinadas(h1.getColumna(), h1.getFila());
 		tablero[h1.getColumna()][h1.getFila()] = h1.getCodigo();
 		tiros.add(h1);
-		marcador.setIntentos(marcador.intentos++);
+		int x= marcador.getIntentos();
+		x++;
+		marcador.setIntentos(x);
+		
 	}
 
-	public void ponerCarro() {
-		Trupalla c1 = new Trupalla();
-		tablero[c1.getFila()][c1.getColumna()]="[T]";
-		carros[0]= c1;
-		System.out.println(c1.toString());
+	public void mostrarIntentos() {
+		System.out.println(marcador.getIntentos());
+	}
+	
+	public void ponerTrupallas() {
+		for (int i = 0; i < 10; i++) {
+		Trupalla trupalla = new Trupalla();
+		carros[i]= trupalla;
+		//boolean ocupado=verificaOcupado();
+		
+		if (verificaVacio(trupalla.getFila(),trupalla.getColumna())) {
+			tablero[trupalla.getFila()][trupalla.getColumna()]="[T]";
+		}else {
+			while (!verificaVacio(trupalla.getFila(),trupalla.getColumna())) {
+				trupalla.setFila(Utiles.generaRandom(14,0));
+				trupalla.setColumna(Utiles.generaRandom(14,0));
+				tablero[trupalla.getFila()][trupalla.getColumna()]="[T]";
+				
+			}
+			
+			
+		}
+		
+		
+		
+		
+//		if (tablero[trupalla.getFila()][trupalla.getColumna()].contentEquals("[-]")) {
+//			tablero[trupalla.getFila()][trupalla.getColumna()]="[T]"; //coloca en tablero	
+//		}
+//		
+//		
+//		
+//		while (!ocupado)
+//		if (tablero[trupalla.getFila()][trupalla.getColumna()].contentEquals("[T]")) {
+//			trupalla.setFila(Utiles.generaRandom(14,0));
+//			trupalla.setColumna(Utiles.generaRandom(14,0));
+//			if (tablero[trupalla.getFila()][trupalla.getColumna()].contentEquals("[-]")) {
+//				ocupado=true;
+//				}
+//			}
+		System.out.println(trupalla.toString());
+		}
+		
+		}
+
+	
+	
+	public boolean verificaVacio(int x,int y) {
+		if (tablero[x][y].contentEquals("[-]")) {
+			return true;
+		}else {
+			return false;	
+		}
 	}
 	
 	/**
@@ -67,6 +118,8 @@ public class Tablero {
 		}
 		if (tablero[x][y].equals("[T]")) {
 			Utiles.escribir("Le diste a una Trupalla!");
+			int puntaje = marcador.getPuntaje();
+			marcador.setPuntaje(puntaje+1);
 		
 		}
 		if (tablero[x][y].equals("[K]")) {
@@ -76,6 +129,7 @@ public class Tablero {
 			Utiles.escribir("Ya habias disparado aqui anteriormente");
 		}
 	}
+	
 	
 	/**
 	 * Muestra el ArrayList con los tiros efectuados, coordenadas, y puntajes
