@@ -11,6 +11,7 @@ public class Menu {
 		Tablero tablero = new Tablero();
 		tablero.ponerCarro();
 		tablero.mostrarTablero();
+		Marcador marcador =new Marcador();
 //Inicio del menu----------------------------------------
 		while (!salir) {
 
@@ -35,6 +36,7 @@ public class Menu {
 			case 3:
 				Utiles.escribir("Mostrando puntaje");
 				tablero.listarTiros();
+				System.out.println(marcador.getIntentos());
 				break;
 			case 4:
 				Utiles.escribir("Hasta la vista beibi...");

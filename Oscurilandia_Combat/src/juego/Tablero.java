@@ -7,6 +7,7 @@ public class Tablero {
 	static String[][] tablero = new String[15][15];
 	static Carro[] carros = new Carro[18];
 	ArrayList <Huevo> tiros = new ArrayList<Huevo>();
+	Marcador marcador =new Marcador();
 	
 
 	
@@ -45,6 +46,7 @@ public class Tablero {
 		verificaCoordinadas(h1.getColumna(), h1.getFila());
 		tablero[h1.getColumna()][h1.getFila()] = h1.getCodigo();
 		tiros.add(h1);
+		marcador.setIntentos(marcador.intentos++);
 	}
 
 	public void ponerCarro() {
@@ -62,6 +64,10 @@ public class Tablero {
 	public void verificaCoordinadas(int x, int y) {
 		if (tablero[x][y].equals("[-]")) {
 			Utiles.escribir("Huevo desperdiciado :(");
+		}
+		if (tablero[x][y].equals("[T]")) {
+			Utiles.escribir("Le diste a una Trupalla!");
+		
 		}
 		if (tablero[x][y].equals("[K]")) {
 			Utiles.escribir("Le diste a una Kromi!");
