@@ -7,7 +7,7 @@ public class Menu {
 
 	public static void crearMenu() {
 		boolean salir = false;
-		Utiles.escribir("BIENVENIDO AL COMBATE");
+		Utiles.escribir("****BIENVENIDO AL COMBATE****");
 		Tablero tablero = new Tablero();
 		tablero.ponerKromis();
 		tablero.ponerCaguano();
