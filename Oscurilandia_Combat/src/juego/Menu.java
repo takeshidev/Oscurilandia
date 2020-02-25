@@ -4,8 +4,7 @@ import java.awt.Toolkit;
 import java.util.*;
 
 public class Menu {
-//hola
-	
+
 	public static void crearMenu() {
 		boolean salir = false;
 		Utiles.escribir("BIENVENIDO AL COMBATE");
