@@ -133,9 +133,19 @@ public class Tablero {
 		int cuentacarro = 0;
 		int cuentapos = 0;
 		int posC, posP;
+		boolean ingresado = false;
 		Huevo huevo = new Huevo();
-		huevo.setX(Utiles.leerNumeros("Ingrese coordenada X (vertical):", "sinlinea"));
-		huevo.setY(Utiles.leerNumeros("Ingrese coordenada Y (horizontal):", "sinlinea"));
+		while (!ingresado) {
+			int k = Utiles.leerNumeros("Ingrese coordenada x(vertical):" , "sinlinea");
+			int j = Utiles.leerNumeros("Ingrese coordenada y (vertical):" , "sinlinea");
+			if (k >=0 && k <14 && j >= 0 && j < 14) {
+			huevo.setX(k);
+			huevo.setY(j);
+			ingresado = true;
+			}else {
+				System.out.println("coordenadas invalidas. Trate con numeros entre 0 y 14");
+			}
+		}
 		String objImpactado = verificaImpacto(huevo.getX(), huevo.getY());
 		tablero[huevo.getX()][huevo.getY()] = huevo.getCodigo(); // pone letra en tablero
 		tiros.add(huevo); // agrega huevo a arrayList de tiros
