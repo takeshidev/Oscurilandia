@@ -145,7 +145,6 @@ public class Tablero {
 				for (Posicion posicion : carro.posiciones) {
 					if (huevo.getX() == posicion.getX() && huevo.getY() == posicion.getY()) {
 						carro.setVida(carro.getVida() - 1);
-						Utiles.escribir("+2pts");
 						int puntaje = marcador.getPuntaje();
 						marcador.setPuntaje(puntaje + 2);
 						huevo.setPuntaje(2);
@@ -170,7 +169,7 @@ public class Tablero {
 						if (carro.getVida() == 0) {
 							puntaje = marcador.getPuntaje();
 							Utiles.escribir("Kromi destruida!!! +10pts");
-							marcador.setPuntaje(puntaje + 3);
+							marcador.setPuntaje(puntaje + 10);
 							huevo.setPuntaje(3 + 10);
 						}
 					}
@@ -213,18 +212,18 @@ public class Tablero {
 			return "Fallo";
 		}
 		if (tablero[x][y].equals("[T]")) {
-			Utiles.escribir("Le diste a una Trupalla!");
+			Utiles.escribir("Le diste a una Trupalla! +1pts");
 
 			Toolkit.getDefaultToolkit().beep();
 			return "Trupalla";
 		}
 		if (tablero[x][y].equals("[C]")) {
-			Utiles.escribir("Le diste a un Caguano!", "sinlinea");
+			Utiles.escribir("Le diste a un Caguano! +2pts");
 			Toolkit.getDefaultToolkit().beep();
 			return "Caguano";
 		}
 		if (tablero[x][y].equals("[K]")) {
-			Utiles.escribir("Le diste a una Kromi!", "sinlinea");
+			Utiles.escribir("Le diste a una Kromi! +3pts");
 			Toolkit.getDefaultToolkit().beep();
 			return "Kromi";
 		}
