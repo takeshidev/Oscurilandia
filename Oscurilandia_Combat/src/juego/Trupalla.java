@@ -2,14 +2,15 @@ package juego;
 //hola
 
 public class Trupalla extends Carro {
+	Data d1 = new Data();
 	private int armadura;
 	private String nombreConductor;
 
 	// Constructor
 	public Trupalla() {
 		super(2, "2015");
-		this.armadura = 1;
-		this.nombreConductor = "Trupallero";
+		this.armadura = d1.generaArmadura();//Cambio Juanca
+		this.nombreConductor = d1.generaNombre();//Cambio Juanca
 	}
 
 	@Override

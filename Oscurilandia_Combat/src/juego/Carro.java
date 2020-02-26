@@ -1,7 +1,7 @@
 package juego;
 import juego.Utiles;
 
-//carroo
+//carro
 public class Carro {
 	protected int cantidadOcupantes;
 	protected String fechaIngreso;
