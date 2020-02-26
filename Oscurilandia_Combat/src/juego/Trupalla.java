@@ -6,7 +6,6 @@ public class Trupalla extends Carro {
 	private String nombreConductor;
 
 	// Constructor
-	//ss
 	public Trupalla() {
 		super(2, "2015");
 		this.armadura = Data.generaArmadura();
