@@ -1,7 +1,7 @@
 package juego;
 
 public class Trupalla extends Carro {
-	Data d1 = new Data();
+	
 	private int armadura;
 	private String nombreConductor;
 
@@ -9,8 +9,8 @@ public class Trupalla extends Carro {
 	//ss
 	public Trupalla() {
 		super(2, "2015");
-		this.armadura = d1.generaArmadura();//Cambio Juanca
-		this.nombreConductor = d1.generaNombre();//Cambio Juanca
+		this.armadura = Data.generaArmadura();
+		this.nombreConductor = Data.generaNombre();
 	}
 
 	@Override

@@ -8,8 +8,8 @@ public class Caguano extends Carro {
 	// Constructor
 	public Caguano() {
 		super(3, "2010");
-		this.alcanceTiro = alcanceTiro;
-		this.colorConfetti = colorConfetti;
+		this.alcanceTiro = Utiles.generaRandom(10, 1);
+		this.colorConfetti = Data.generaColor();
 	}
 
 	// ToString

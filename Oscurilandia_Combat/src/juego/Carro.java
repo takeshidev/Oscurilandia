@@ -12,8 +12,8 @@ public class Carro {
 
 	// Constructor
 	public Carro(int cantidadOcupantes, String fechaIngreso) {
-		this.cantidadOcupantes = cantidadOcupantes;
-		this.fechaIngreso = fechaIngreso;
+		this.cantidadOcupantes = Utiles.generaRandom(5, 1);
+		this.fechaIngreso = "200" +Integer.toString(Utiles.generaRandom(9, 1));
 	}
 
 	// Metodos del Carro

@@ -8,8 +8,8 @@ public class Kromi extends Carro {
 	// Constructor
 	public Kromi() {
 		super(10, "2001");
-		this.anioFab = "2000";
-		this.marca = "Chancho";
+		this.anioFab = "200" +Integer.toString(Utiles.generaRandom(9, 1));
+		this.marca = Data.generaMarca();
 	}
 
 
