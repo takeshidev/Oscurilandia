@@ -2,16 +2,16 @@ package juego;
 
 public class Huevo {
 
-	private int fila;
-	private int columna;
+	private int x;
+	private int y;
 	private int puntaje = 0;
 	private String codigo = "[H]";
 	
 	public Huevo() {
 		}
-	public Huevo(int fila, int columna) {
-		this.fila = fila;
-		this.columna = columna;
+	public Huevo(int x, int y) {
+		this.x = x;
+		this.y = y;
 	}
 
 	public String getCodigo() {
@@ -24,23 +24,23 @@ public class Huevo {
 
 	@Override
 	public String toString() {
-		return "Huevo [fila=" + fila + ", columna=" + columna + ", puntaje=" + puntaje + "]";
+		return "Huevo [X=" + x + ", Y=" + y + ", puntaje=" + puntaje + "]";
 	}
 
-	public int getFila() {
-		return fila;
+	public int getX() {
+		return x;
 	}
 
-	public void setFila(int fila) {
-		this.fila = fila;
+	public void setX(int x) {
+		this.x = x;
 	}
 
-	public int getColumna() {
-		return columna;
+	public int getY() {
+		return y;
 	}
 
-	public void setColumna(int columna) {
-		this.columna = columna;
+	public void setY(int y) {
+		this.y = y;
 	}
 
 	public int getPuntaje() {

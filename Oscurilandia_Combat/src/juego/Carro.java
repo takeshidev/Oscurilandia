@@ -5,16 +5,16 @@ import juego.Utiles;
 public class Carro {
 	protected int cantidadOcupantes;
 	protected String fechaIngreso;
-	private int fila;
-	private int columna;
+	private int x;
+	private int y;
 
 	// Constructor
 	public Carro(int cantidadOcupantes, String fechaIngreso) {
 		this.cantidadOcupantes = cantidadOcupantes;
 		this.fechaIngreso = fechaIngreso;
 				
-		this.fila = Utiles.generaRandom(14, 0);
-		this.columna = Utiles.generaRandom(14, 0);
+		this.x = Utiles.generaRandom(14, 0);
+		this.y = Utiles.generaRandom(14, 0);
 		
 		
 	}
@@ -36,29 +36,28 @@ public class Carro {
 		this.fechaIngreso = fechaIngreso;
 	}
 
-	public int getFila() {
-		return fila;
+	public int getX() {
+		return x;
 	}
 
-	public void setFila(int fila) {
-		this.fila = fila;
+	public void setX(int x) {
+		this.x = x;
 	}
 
-	public int getColumna() {
-		return columna;
+	public int getY() {
+		return y;
 	}
 
-	public void setColumna(int columna) {
-		this.columna = columna;
+	public void setY(int y) {
+		this.y = y;
 	}
 
 	//To String
 	@Override
 	public String toString() {
-		return "Carro [cantidadOcupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", fila=" + fila
-				+ ", columna=" + columna + "]";
+		return "Carro [cantidadOcupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", x=" + x
+				+ ", y=" + y + "]";
 	}
 
-	//ds
 
 }

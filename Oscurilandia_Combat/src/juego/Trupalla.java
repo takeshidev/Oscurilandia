@@ -12,15 +12,11 @@ public class Trupalla extends Carro {
 		this.nombreConductor = "Trupallero";
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Trupalla [armadura=" + armadura + ", nombreConductor=" + nombreConductor + ", cantidadOcupantes="
-				+ cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + "]" + getColumna() + "-"+ getFila();
+				+ cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + "]" + getX() + "-"+ getY();
 	}
-
-
 
 	// Getters and Setters
 	public int getArmadura() {
@@ -38,5 +34,5 @@ public class Trupalla extends Carro {
 	public void setNombreConductor(String nombreConductor) {
 		this.nombreConductor = nombreConductor;
 	}
-//dsds
+
 }

@@ -16,7 +16,7 @@ public class Kromi extends Carro {
 	@Override
 	public String toString() {
 		return "Kromi [anioFab=" + anioFab + ", marca=" + marca + ", cantidadOcupantes=" + cantidadOcupantes
-				+ ", fechaIngreso=" + fechaIngreso + "]"+ getColumna() + "-"+ getFila();
+				+ ", fechaIngreso=" + fechaIngreso + "]"+ getX() + "-"+ getY();
 	}
 
 	// Getters and Setters
@@ -35,6 +35,6 @@ public class Kromi extends Carro {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-//ddd
+
 }
 
