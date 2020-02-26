@@ -2,7 +2,7 @@ package juego;
 
 import java.awt.Toolkit;
 import java.util.*;
-
+//
 public class Tablero {
 
 	String[][] tablero = new String[15][15];
