@@ -257,7 +257,7 @@ public class Tablero {
 			System.out.println(huevo);
 		}
 	}
-
+//hola
 	/**
 	 * Imprime (con ln) el numero de lanzamientos realizados
 	 */
