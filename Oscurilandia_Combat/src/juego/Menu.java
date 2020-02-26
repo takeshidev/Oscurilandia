@@ -29,7 +29,6 @@ public class Menu {
 			case 1:
 				Utiles.escribir("Preparandose para lanzar huevo...");
 				tablero.tirarHuevo();
-				Toolkit.getDefaultToolkit().beep();
 				break;
 			case 2:
 				Utiles.escribir("Mostrando tablero");
@@ -47,7 +46,7 @@ public class Menu {
 				break;
 			}//switch
 		} catch (InputMismatchException e) {
-			Utiles.escribir("Ocurrió un error :(. Debes ingresar una opción.");
+			Utiles.escribir("Ocurriï¿½ un error :(. Debes ingresar una opciï¿½n.");
 		}
 			
 		}//while

@@ -1,5 +1,6 @@
 package juego;
 
+import java.awt.Toolkit;
 import java.util.*;
 
 public class Tablero {
@@ -34,32 +35,6 @@ public class Tablero {
 		}
 	}// mostrarTablero
 
-	/**
-	 * Lanza un huevo solicitando coordenadas
-	 */
-	public void tirarHuevo() {
-		Huevo huevo = new Huevo();
-		huevo.setX(Utiles.leerNumeros("Ingrese coordenada X (vertical):"));
-		huevo.setY(Utiles.leerNumeros("Ingrese coordenada Y (horizontal):"));
-		verificaCoordinadas(huevo.getX(), huevo.getY());
-		tablero[huevo.getX()][huevo.getY()] = huevo.getCodigo();
-		tiros.add(huevo);
-		int i = marcador.getIntentos();
-		i++;
-		marcador.setIntentos(i);
-	}
-/**
- * Imprime (con ln) el numero de lanzamientos realizados
- */
-	public void mostrarIntentos() {
-		System.out.println("Intentos " + marcador.getIntentos());
-	}
-/**
- * Imprime (con ln) el puntaje acomulado
- */
-	public void mostrarPuntaje() {
-		System.out.println("Puntaje: " + marcador.getPuntaje());
-	}
 /**
  * Genera objetos Kromis y los agrega al array de carros y su referencia al tablero
  */
@@ -130,6 +105,22 @@ public class Tablero {
 			System.out.println(caguano.toString());
 		}
 	}
+
+	/**
+	 * Lanza un huevo solicitando coordenadas
+	 */
+	public void tirarHuevo() {
+		Huevo huevo = new Huevo();
+		huevo.setX(Utiles.leerNumeros("Ingrese coordenada X (vertical):"));
+		huevo.setY(Utiles.leerNumeros("Ingrese coordenada Y (horizontal):"));
+		verificaCoordinadas(huevo.getX(), huevo.getY());
+		tablero[huevo.getX()][huevo.getY()] = huevo.getCodigo();
+		tiros.add(huevo);
+		int i = marcador.getIntentos();
+		i++;
+		marcador.setIntentos(i);
+	}
+
 	/**
 	 * Verifica un espacio en el tablero y retorna true si esta vacio
 	 * @param x
@@ -159,10 +150,11 @@ public class Tablero {
 			Utiles.escribir("Le diste a una Trupalla!");
 			int puntaje = marcador.getPuntaje();
 			marcador.setPuntaje(puntaje + 1);
-
+			Toolkit.getDefaultToolkit().beep();
 		}
 		if (tablero[x][y].equals("[K]")) {
 			Utiles.escribir("Le diste a una Kromi!");
+			Toolkit.getDefaultToolkit().beep();
 		}
 		if (tablero[x][y].equals("[H]")) {
 			Utiles.escribir("Ya habias disparado aqui anteriormente");
@@ -178,4 +170,17 @@ public class Tablero {
 		}
 	}
 
+	/**
+	 * Imprime (con ln) el numero de lanzamientos realizados
+	 */
+	public void mostrarIntentos() {
+		System.out.println("Intentos " + marcador.getIntentos());
+	}
+
+	/**
+	 * Imprime (con ln) el puntaje acomulado
+	 */
+	public void mostrarPuntaje() {
+		System.out.println("Puntaje: " + marcador.getPuntaje());
+	}
 } // class Tablero
