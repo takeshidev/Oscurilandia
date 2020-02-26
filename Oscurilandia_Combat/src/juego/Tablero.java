@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Tablero {
 
-	static String[][] tablero = new String[15][15];
+	String[][] tablero = new String[15][15];
 	ArrayList<Carro> carros = new ArrayList<Carro>();
 	ArrayList<Huevo> tiros = new ArrayList<Huevo>();
 	Marcador marcador = new Marcador();
@@ -35,75 +35,77 @@ public class Tablero {
 		}
 	}// mostrarTablero
 
-/**
- * Genera objetos Kromis y los agrega al array de carros y su referencia al tablero
- */
-	public void ponerKromis() {
-		for (int i = 0; i < 3; i++) {
-			Kromi kromi = new Kromi();
-			carros.add(kromi);
-			kromi.setX(Utiles.generaRandom(11, 0));
-			
-			if (verificaVacio(kromi.getX(), kromi.getY())) {
-				tablero[kromi.getX()][kromi.getY()] = "[K]";
-				tablero[kromi.getX()+1][kromi.getY()] = "[K]";
-				tablero[kromi.getX()+2][kromi.getY()] = "[K]";
-			} else {
-				while (!verificaVacio(kromi.getX(), kromi.getY())) {
-					kromi.setX(Utiles.generaRandom(11, 0));
-					kromi.setY(Utiles.generaRandom(14, 0));
-					tablero[kromi.getX()][kromi.getY()] = "[K]";
-					tablero[kromi.getX()+1][kromi.getY()] = "[K]";
-					tablero[kromi.getX()+2][kromi.getY()] = "[K]";
-				}
-			}
-			System.out.println(kromi.toString());
-		}
-	}
 	/**
-	 * Genera objetos Trupalla y los agrega al array de carros y su referencia al tablero
+	 * Genera objetos Kromis y los agrega al array de carros y su referencia al
+	 * tablero
 	 */
-	public void ponerTrupallas() {
-		for (int i = 0; i < 10; i++) {
-			Trupalla trupalla = new Trupalla();
-			carros.add(trupalla);
-			// boolean ocupado=verificaOcupado();
+	public void ponerKromis() {
+		int x = 0;
+		int y = 0;
 
-			if (verificaVacio(trupalla.getX(), trupalla.getY())) {
-				tablero[trupalla.getX()][trupalla.getY()] = "[T]";
-			} else {
-				while (!verificaVacio(trupalla.getX(), trupalla.getY())) {
-					trupalla.setX(Utiles.generaRandom(14, 0));
-					trupalla.setY(Utiles.generaRandom(14, 0));
-					tablero[trupalla.getX()][trupalla.getY()] = "[T]";
-				}
+		for (int i = 0; i < 30; i++) {
+			x = Utiles.generaRandom(14 - 3, 0);
+			y = Utiles.generaRandom(14, 0);
+			if (verificaVacio(x, y)) {
+				i = 29;
 			}
-			System.out.println(trupalla.toString());
 		}
+		Kromi kromi = new Kromi();
+		for (int i = 0; i < 3; i++) {
+			kromi.agregarPosicion(new Posicion(x + i, y));
+			this.tablero[x + i][y] = "[K]";
+		}
+
+		this.carros.add(kromi);
+		System.out.println(kromi.toString());
 	}
 
 	/**
-	 * Genera objetos Caguano y los agrega al array de carros y su referencia al tablero
+	 * Genera objetos Caguano y los agrega al array de carros y su referencia al
+	 * tablero
 	 */
 	public void ponerCaguano() {
-		for (int i = 0; i < 5; i++) {
-			Caguano caguano = new Caguano();
-			carros.add(caguano);
-			caguano.setY(Utiles.generaRandom(13, 0));
-			
-			if (verificaVacio(caguano.getX(), caguano.getY())) {
-				tablero[caguano.getX()][caguano.getY()] = "[C]";
-				tablero[caguano.getX()][caguano.getY()+1] = "[C]";
-			} else {
-				while (!verificaVacio(caguano.getX(), caguano.getY())) {
-					caguano.setX(Utiles.generaRandom(14, 0));
-					caguano.setY(Utiles.generaRandom(13, 0));
-					tablero[caguano.getX()][caguano.getY()] = "[C]";
-					tablero[caguano.getX()][caguano.getY()+1] = "[C]";
-				}
+		int x = 0;
+		int y = 0;
+
+		for (int i = 0; i < 30; i++) {
+			x = Utiles.generaRandom(14, 0);
+			y = Utiles.generaRandom(14 - 1, 0);
+			if (verificaVacio(x, y)) {
+				i = 29;
 			}
-			System.out.println(caguano.toString());
 		}
+		Caguano caguano = new Caguano();
+		for (int i = 0; i < 2; i++) {
+			caguano.agregarPosicion(new Posicion(x, y + i));
+			this.tablero[x][y + i] = "[C]";
+		}
+
+		this.carros.add(caguano);
+		System.out.println(caguano.toString());
+	}
+
+	/**
+	 * Genera objetos Trupalla y los agrega al array de carros y su referencia al
+	 * tablero
+	 */
+	public void ponerTrupallas() {
+		int x = 0;
+		int y = 0;
+
+		for (int i = 0; i < 30; i++) {
+			x = Utiles.generaRandom(14, 0);
+			y = Utiles.generaRandom(14 - 1, 0);
+			if (verificaVacio(x, y)) {
+				i = 29;
+			}
+		}
+		Trupalla trupalla = new Trupalla();
+		trupalla.agregarPosicion(new Posicion(x, y));
+		this.tablero[x][y] = "[T]";
+
+		this.carros.add(trupalla);
+		System.out.println(trupalla.toString());
 	}
 
 	/**
