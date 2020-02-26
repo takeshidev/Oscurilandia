@@ -2,6 +2,7 @@ package juego;
 
 import java.awt.Toolkit;
 import java.util.*;
+
 //
 public class Tablero {
 
@@ -55,9 +56,9 @@ public class Tablero {
 			kromi.agregarPosicion(new Posicion(x + i, y));
 			this.tablero[x + i][y] = "[K]";
 		}
-
+		kromi.setVida(3);
 		this.carros.add(kromi);
-		System.out.println(kromi.toString());
+		System.out.println(kromi.getVida() + " " + kromi.toString());
 	}
 
 	/**
@@ -80,9 +81,9 @@ public class Tablero {
 			caguano.agregarPosicion(new Posicion(x, y + i));
 			this.tablero[x][y + i] = "[C]";
 		}
-
+		caguano.setVida(2);
 		this.carros.add(caguano);
-		System.out.println(caguano.toString());
+		System.out.println(caguano.getVida() + " " + caguano.toString());
 	}
 
 	/**
@@ -103,9 +104,10 @@ public class Tablero {
 		Trupalla trupalla = new Trupalla();
 		trupalla.agregarPosicion(new Posicion(x, y));
 		this.tablero[x][y] = "[T]";
+		trupalla.setVida(1);
 
 		this.carros.add(trupalla);
-		System.out.println(trupalla.toString());
+		System.out.println(trupalla.getVida() + " " + trupalla.toString());
 	}
 
 	/**
@@ -113,64 +115,73 @@ public class Tablero {
 	 */
 	public void tirarHuevo() {
 		Posicion posicionselec;
-		int cuentacarro=0;
-		int cuentapos=0;
+		int cuentacarro = 0;
+		int cuentapos = 0;
 		int posC, posP;
 		Huevo huevo = new Huevo();
-		huevo.setX(Utiles.leerNumeros("Ingrese coordenada X (vertical):","sinlinea"));
-		huevo.setY(Utiles.leerNumeros("Ingrese coordenada Y (horizontal):","sinlinea"));
+		huevo.setX(Utiles.leerNumeros("Ingrese coordenada X (vertical):", "sinlinea"));
+		huevo.setY(Utiles.leerNumeros("Ingrese coordenada Y (horizontal):", "sinlinea"));
 		String objImpactado = verificaImpacto(huevo.getX(), huevo.getY());
-		tablero[huevo.getX()][huevo.getY()] = huevo.getCodigo(); //pone letra en tablero
-		tiros.add(huevo); //agrega huevo a arrayList de tiros
-//		
-//		for (Carro carro : carros) {
-//			for (Posicion posicion : carro.posiciones) {
-//				if (huevo.getX() == posicion.getX() && huevo.getY() == posicion.getY()) {
-//					posC=cuentapos;
-//					posP=cuentacarro;
-//				}
-//				cuentapos++;
-//			}
-//			cuentacarro++;
-//		}
-//		for (Iterator iterator = carros.iterator(); iterator.hasNext();) {
-//			Carro carro = (Carro) iterator.next();
-//			for (Iterator iterator2 = carro.posiciones.iterator(); iterator2.hasNext();) {
-//				Posicion posicion = (Posicion) iterator2.next();
-//				if (huevo.getX() == posicion.getX() && huevo.getY() == posicion.getY()) {
-//					carro.posiciones.remove(posicion);
-//				}
-//			}
-//		}
+		tablero[huevo.getX()][huevo.getY()] = huevo.getCodigo(); // pone letra en tablero
+		tiros.add(huevo); // agrega huevo a arrayList de tiros
+		marcador.setIntentos(marcador.getIntentos() + 1); // incrementa numero intentos
+		if (objImpactado.equals("Trupalla")) {
+			for (Carro carro : carros) {
+				for (Posicion posicion : carro.posiciones) {
+					if (huevo.getX() == posicion.getX() && huevo.getY() == posicion.getY()) {
+						carro.setVida(carro.getVida() - 1);
+						if (carro.getVida() == 0) {
+							int puntaje = marcador.getPuntaje();
+							marcador.setPuntaje(puntaje + 1);
+							huevo.setPuntaje(1);
+						}
+					}
+				}
+			}
+		}
 
-//		for (Iterator iterator = carros.iterator(); iterator.hasNext();) {
-//			Carro carro = (Carro) iterator.next();
-//			for (Iterator iterator2 = carro.posiciones.iterator(); iterator2.hasNext();) {
-//				Posicion posicion = (Posicion) iterator2.next();
-//				if (huevo.getX() == posicion.getX() && huevo.getY() == posicion.getY()) {
-//					posicionselec= posicion;
-//					System.out.println(posicionselec);
-//					System.out.println(posicion);
-//				}
-//			}
-//		}
+		if (objImpactado.equals("Caguano")) {
+			for (Carro carro : carros) {
+				for (Posicion posicion : carro.posiciones) {
+					if (huevo.getX() == posicion.getX() && huevo.getY() == posicion.getY()) {
+						carro.setVida(carro.getVida() - 1);
+						Utiles.escribir("+2pts");
+						int puntaje = marcador.getPuntaje();
+						marcador.setPuntaje(puntaje + 2);
+						huevo.setPuntaje(2);
+						if (carro.getVida() == 0) {
+							Utiles.escribir("Caguano destruido!!! +7pts");
+							puntaje = marcador.getPuntaje();
+							marcador.setPuntaje(puntaje + 7);
+							huevo.setPuntaje(2 + 7);
+						}
+					}
+				}
+			}
+		}
+		if (objImpactado.equals("Kromi")) {
+			for (Carro carro : carros) {
+				for (Posicion posicion : carro.posiciones) {
+					if (huevo.getX() == posicion.getX() && huevo.getY() == posicion.getY()) {
+						carro.setVida(carro.getVida() - 1);
+						int puntaje = marcador.getPuntaje();
+						marcador.setPuntaje(puntaje + 3);
+						huevo.setPuntaje(3);
+						if (carro.getVida() == 0) {
+							puntaje = marcador.getPuntaje();
+							Utiles.escribir("Kromi destruida!!! +10pts");
+							marcador.setPuntaje(puntaje + 3);
+							huevo.setPuntaje(3 + 10);
+						}
+					}
+				}
+			}
+		}
 
-		
-//		for (Carro carro : carros) {
-//			for (Posicion posicion : carro.posiciones) {
-//				if (huevo.getX() == posicion.getX() && huevo.getY() == posicion.getY()) {
-//					carro.posiciones.remove(posicion);
-//				}
-//
-//			}
-//
-//		}
-		marcador.setIntentos(marcador.getIntentos()+1); //incrementa numero intentos
 	}
 
 	public String impacto() {
 
-		
 		return "";
 	}
 
@@ -203,18 +214,17 @@ public class Tablero {
 		}
 		if (tablero[x][y].equals("[T]")) {
 			Utiles.escribir("Le diste a una Trupalla!");
-//			int puntaje = marcador.getPuntaje();
-//			marcador.setPuntaje(puntaje + 1);
+
 			Toolkit.getDefaultToolkit().beep();
 			return "Trupalla";
 		}
 		if (tablero[x][y].equals("[C]")) {
-			Utiles.escribir("Le diste a un Caguano!");
+			Utiles.escribir("Le diste a un Caguano!", "sinlinea");
 			Toolkit.getDefaultToolkit().beep();
 			return "Caguano";
 		}
 		if (tablero[x][y].equals("[K]")) {
-			Utiles.escribir("Le diste a una Kromi!");
+			Utiles.escribir("Le diste a una Kromi!", "sinlinea");
 			Toolkit.getDefaultToolkit().beep();
 			return "Kromi";
 		}

@@ -3,12 +3,13 @@ package juego;
 import java.util.ArrayList;
 import juego.Utiles;
 
-//carro
+
 public class Carro {
 	protected String patente;
 	protected int cantidadOcupantes;
 	protected String fechaIngreso;
 	private Posicion posicion;
+	protected int vida=1;
 	ArrayList<Posicion> posiciones = new ArrayList<Posicion>();
 
 	// Constructor
@@ -23,6 +24,13 @@ public class Carro {
 		this.posiciones.add(posicion);
 	}
 
+	public int getVida() {
+		return vida;
+	}
+
+	public void setVida(int vida) {
+		this.vida = vida;
+	}
 	// Getters and Setters
 	public int getCantidadOcupantes() {
 		return cantidadOcupantes;
@@ -43,7 +51,7 @@ public class Carro {
 	// To String
 	@Override
 	public String toString() {
-		return "Carro [patente="+patente+", Ocupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", x=" + ", y="
+		return "Carro [patente="+patente+", Vida="+vida+" Ocupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", x=" + ", y="
 				+ "]";
 	}
 

@@ -10,19 +10,19 @@ public class Caguano extends Carro {
 		super(3, "2010");
 		this.alcanceTiro = Utiles.generaRandom(10, 1);
 		this.colorConfetti = Data.generaColor();
+		
 	}
 
 	// ToString
-	public int getAlcanceTiro() {
-		return alcanceTiro;
-	}
-
 	@Override
 	public String toString() {
 		return "Caguano [patente="+patente+",alcanceTiro=" + alcanceTiro + ", colorConfetti=" + colorConfetti + ", cantidadOcupantes="
 				+ cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", posiciones=" + posiciones + "]";
 	}
 
+	public int getAlcanceTiro() {
+		return alcanceTiro;
+	}
 	public void setAlcanceTiro(int alcanceTiro) {
 		this.alcanceTiro = alcanceTiro;
 	}
