@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 /**
 * Esta clase almacena los metodos para escribir por pantalla y para leer numeros ingresado por el usuario
-* @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorsa
+* @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorza
 * @version 2.0.0
 */
 public class Utiles {

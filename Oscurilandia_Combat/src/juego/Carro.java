@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import juego.Utiles;
 /**
  * Esta clase define los objetos Carro. SuperClase
- * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorsa
+ * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorza
  * @version 2.0.0
  */
 public class Carro {

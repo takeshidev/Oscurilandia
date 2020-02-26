@@ -3,7 +3,7 @@ package juego;
 import java.util.Random;
 /**
  * Esta clase almacena la informcion para los atributos de los objetos Carro
- * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorsa
+ * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorza
  * @version 2.0.0
  */
 public class Data {

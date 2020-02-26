@@ -1,7 +1,7 @@
 package juego;
 /**
  * Esta clase almacena el puntaje de los tiros
- * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorsa
+ * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorza
  * @version 2.0.0
  */
 public class Marcador {

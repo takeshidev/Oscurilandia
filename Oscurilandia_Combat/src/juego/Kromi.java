@@ -1,7 +1,7 @@
 package juego;
 /**
  * Esta clase define los objetos Kromi. Clase Hija
- * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorsa
+ * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorza
  * @version 2.0.0
  */
 public class Kromi extends Carro {

@@ -4,7 +4,7 @@ import java.awt.Toolkit;
 import java.util.*;
 /**
  * Clase Tablero que contiene los metodo imprimir tablero, lanzar huevos y rellenar los tableros
- * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorsa
+ * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorza
  * @version 2.0.0
  */
 public class Tablero {
