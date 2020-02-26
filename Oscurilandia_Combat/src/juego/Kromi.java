@@ -1,5 +1,4 @@
 package juego;
-//kromii
 
 public class Kromi extends Carro {
 
@@ -13,11 +12,15 @@ public class Kromi extends Carro {
 		this.marca = "Chancho";
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "Kromi [anioFab=" + anioFab + ", marca=" + marca + ", cantidadOcupantes=" + cantidadOcupantes
-				+ ", fechaIngreso=" + fechaIngreso + "]"+ getX() + "-"+ getY();
+				+ ", fechaIngreso=" + fechaIngreso + ", posiciones=" + posiciones + "]";
 	}
+
+
 
 	// Getters and Setters
 	public String getAnioFab() {

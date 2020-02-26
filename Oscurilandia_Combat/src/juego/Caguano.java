@@ -20,7 +20,7 @@ public class Caguano extends Carro {
 	@Override
 	public String toString() {
 		return "Caguano [alcanceTiro=" + alcanceTiro + ", colorConfetti=" + colorConfetti + ", cantidadOcupantes="
-				+ cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + "]"+ getX() + "-"+ getY();
+				+ cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", posiciones=" + posiciones + "]";
 	}
 
 	public void setAlcanceTiro(int alcanceTiro) {

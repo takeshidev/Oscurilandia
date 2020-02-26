@@ -1,5 +1,4 @@
 package juego;
-//hola
 
 public class Trupalla extends Carro {
 	Data d1 = new Data();
@@ -16,8 +15,9 @@ public class Trupalla extends Carro {
 	@Override
 	public String toString() {
 		return "Trupalla [armadura=" + armadura + ", nombreConductor=" + nombreConductor + ", cantidadOcupantes="
-				+ cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + "]" + getX() + "-"+ getY();
+				+ cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", posiciones=" + posiciones + "]";
 	}
+
 
 	// Getters and Setters
 	public int getArmadura() {

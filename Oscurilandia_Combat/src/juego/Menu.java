@@ -6,15 +6,21 @@ import java.util.*;
 public class Menu {
 
 	public static void crearMenu() {
-		boolean salir = false;
 		Utiles.escribir("****BIENVENIDO AL COMBATE****");
 		Tablero tablero = new Tablero();
-		tablero.ponerKromis();
-		tablero.ponerCaguano();
-		tablero.ponerTrupallas();
+		for (int i = 0; i < 3; i++) {
+			tablero.ponerKromis();	
+		}
+		for (int i = 0; i < 5; i++) {
+			tablero.ponerCaguano();	
+		}
+		for (int i = 0; i < 10; i++) {
+			tablero.ponerTrupallas();
+		}
 		tablero.mostrarTablero();
 		
 //Inicio del menu----------------------------------------
+		boolean salir = false;
 		while (!salir) {
 
 			Utiles.escribir("  1. Tirar huevo");
