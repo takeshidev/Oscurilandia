@@ -2,9 +2,16 @@ package juego;
 
 import java.awt.Toolkit;
 import java.util.*;
-
+/**
+ * Clase que despliega el menu en pantalla
+ * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorsa
+ * @version 2.0.0
+ */
 public class Menu {
 
+	/**
+	 * Metodo que crea el menu en pantalla
+	 */
 	public static void crearMenu() {
 		Utiles.escribir("****BIENVENIDO AL COMBATE****");
 		Tablero tablero = new Tablero();
@@ -19,7 +26,7 @@ public class Menu {
 		}
 		tablero.mostrarTableroHuevos();
 		
-//Inicio del menu----------------------------------------
+		//Inicio del menu//
 		boolean salir = false;
 		while (!salir) {
 
@@ -28,7 +35,6 @@ public class Menu {
 			Utiles.escribir("  3. Mostrar puntaje");
 			Utiles.escribir("  4. Salir");
 			
- 
 		try {	
 			int op = (int) Utiles.leerNumeros("Ingrese una opcion:", "sinlinea");
 
@@ -60,10 +66,6 @@ public class Menu {
 			Utiles.escribir("Ocurrio un error :(. Debes ingresar una opcion.");
 		}
 		
-		}//while
-	}// crearMenu
-
-
-
-}// Class menu
-
+		}
+	}//Fin Metodo
+}//Fin Clase

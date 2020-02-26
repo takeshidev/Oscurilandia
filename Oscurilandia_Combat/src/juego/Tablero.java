@@ -2,23 +2,30 @@ package juego;
 
 import java.awt.Toolkit;
 import java.util.*;
-
-//
+/**
+ * Clase Tablero que contiene los metodo imprimir tablero, lanzar huevos y rellenar los tableros
+ * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorsa
+ * @version 2.0.0
+ */
 public class Tablero {
 
+	//Campos de la Clase
 	String[][] tablero = new String[15][15];
 	ArrayList<Carro> carros = new ArrayList<Carro>();
 	ArrayList<Huevo> tiros = new ArrayList<Huevo>();
 	Marcador marcador = new Marcador();
-
+	//Fin Campos de Clase
+	
+	/**
+	 * Este metodo rellana el tablero con espacios vacios
+	 */
 	public Tablero() {
-		// rellena el tablero con espacios vacios
 		for (int x = 0; x < tablero.length; x++) {
 			for (int y = 0; y < tablero[0].length; y++) {
 				tablero[x][y] = "[-]";
 			}
 		}
-	}
+	}//Fin Metodo
 
 	/**
 	 * Muestra el tablero en pantalla
@@ -27,33 +34,37 @@ public class Tablero {
 		for (int i = 0; i < tablero.length; i++) {
 			System.out.printf("%3s", i);
 		}
-		System.out.println("");
+		Utiles.escribir("");
 		for (int x = 0; x < tablero.length; x++) {
 			for (int y = 0; y < tablero[0].length; y++) {
 				System.out.print(tablero[x][y]);
 			}
 			System.out.println(x);// imprime el numero del eje vertical
 		}
-	}// mostrarTablero
+	}//Fin Metodo
 
+	/**
+	 * Metodo que muestra los huevos dentro del tablero
+	 */
 	public void mostrarTableroHuevos() {
 		for (int i = 0; i < tablero.length; i++) {
 			System.out.printf("%3s", i);
 		}
-		System.out.println("");
+		Utiles.escribir("");
 		for (int x = 0; x < tablero.length; x++) {
 			for (int y = 0; y < tablero[0].length; y++) {
 				if (tablero[x][y].contentEquals("[H]")) {
 					System.out.print(tablero[x][y]);
 				}else {
-					System.out.print("[-]");
+					Utiles.escribir("[-]","");
 				}
 			}
 			System.out.println(x);// imprime el numero del eje vertical
 		}
-	}// mostrarTablero
+	}//Fin Metodo
+	
 	/**
-	 * Genera objetos Kromis y los agrega al array de carros y su referencia al
+	 * Metodo genera objetos Kromis y los agrega al array de carros y su referencia al
 	 * tablero
 	 */
 	public void ponerKromis() {
@@ -74,8 +85,7 @@ public class Tablero {
 		}
 		kromi.setVida(3);
 		this.carros.add(kromi);
-		
-	}
+	}//Fin Metodo
 
 	/**
 	 * Genera objetos Caguano y los agrega al array de carros y su referencia al
@@ -100,7 +110,7 @@ public class Tablero {
 		caguano.setVida(2);
 		this.carros.add(caguano);
 		
-	}
+	}//Fin Metodo
 
 	/**
 	 * Genera objetos Trupalla y los agrega al array de carros y su referencia al
@@ -123,10 +133,10 @@ public class Tablero {
 		trupalla.setVida(1);
 
 		this.carros.add(trupalla);
-	}
+	}//Fin Metodo
 
 	/**
-	 * Lanza un huevo solicitando coordenadas
+	 * Metodo que lanza un huevo solicitando coordenadas
 	 */
 	public void tirarHuevo() {
 		Posicion posicionselec;
@@ -137,13 +147,13 @@ public class Tablero {
 		Huevo huevo = new Huevo();
 		while (!ingresado) {
 			int k = Utiles.leerNumeros("Ingrese coordenada x(vertical):" , "sinlinea");
-			int j = Utiles.leerNumeros("Ingrese coordenada y (vertical):" , "sinlinea");
+			int j = Utiles.leerNumeros("Ingrese coordenada y(horizontal):" , "sinlinea");
 			if (k >=0 && k <14 && j >= 0 && j < 14) {
 			huevo.setX(k);
 			huevo.setY(j);
 			ingresado = true;
 			}else {
-				System.out.println("coordenadas invalidas. Trate con numeros entre 0 y 14");
+				Utiles.escribir("coordenadas invalidas. Trate con numeros entre 0 y 14");
 			}
 		}
 		String objImpactado = verificaImpacto(huevo.getX(), huevo.getY());
@@ -201,20 +211,18 @@ public class Tablero {
 				}
 			}
 		}
-
 	}
 
 	public String impacto() {
 
 		return "";
-	}
+	}//Fin Metodo
 
 	/**
 	 * Verifica un espacio en el tablero y retorna true si esta vacio
-	 * 
-	 * @param x
-	 * @param y
-	 * @return True si esta vacio
+	 * @param x Es la coordenada para las verticales
+	 * @param y Es la coordenada para las horizontales
+	 * @return Retorna True cuando encuentra un espacio "blanco" o "[-]"
 	 */
 	public boolean verificaVacio(int x, int y) {
 		if (tablero[x][y].contentEquals("[-]")) {
@@ -222,14 +230,13 @@ public class Tablero {
 		} else {
 			return false;
 		}
-	}
+	}//Fin Metodo
 
 	/**
 	 * Verifica las coordenadas del tiro en el tablero e indica si es un tiro
 	 * repetido
-	 * 
-	 * @param x
-	 * @param y
+	 * @param x Es la coordenada para las verticales
+	 * @param y Es la coordenada para las horizontales
 	 */
 	public String verificaImpacto(int x, int y) {
 		if (tablero[x][y].equals("[-]")) {
@@ -257,28 +264,28 @@ public class Tablero {
 			return "Repetido";
 		}
 		return null;
-	}
+	}//Fin Metodo
 
 	/**
-	 * Imprime el ArrayList con los tiros efectuados, coordenadas, y puntajes
+	 * Metodo que imprime el ArrayList con los tiros efectuados, sus coordenadas y el puntaje
 	 */
 	public void listarTiros() {
 		for (Huevo huevo : tiros) {
-			System.out.println(huevo);
+			Utiles.escribir(huevo.toString());
 		}
-	}
+	}//Fin metodo
 
 	/**
-	 * Imprime (con ln) el numero de lanzamientos realizados
+	 * Metodo que imprime los intentos cada vez que se lanza un huevo
 	 */
 	public void mostrarIntentos() {
-		System.out.println("Intentos " + marcador.getIntentos());
-	}
+		Utiles.escribir("Intentos " + marcador.getIntentos());
+	}//Fin Metodo
 
 	/**
-	 * Imprime (con ln) el puntaje acomulado
+	 * Metodo que imprime (en otra linea) el puntaje acomulado por el jugador
 	 */
 	public void mostrarPuntaje() {
-		System.out.println("Puntaje: " + marcador.getPuntaje());
-	}
-} // class Tablero
+		Utiles.escribir("Puntaje: " + marcador.getPuntaje());
+	}//Fin Metodo
+} ///Fin Clase

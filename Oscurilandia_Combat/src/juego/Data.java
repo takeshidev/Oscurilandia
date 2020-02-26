@@ -1,8 +1,14 @@
 package juego;
+
 import java.util.Random;
+/**
+ * Esta clase almacena la informcion para los atributos de los objetos Carro
+ * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorsa
+ * @version 2.0.0
+ */
 public class Data {
 	
-	 //Listas
+	//Campos de la Clase
 	 private static final String conductores[] = {
 		        "Andres", "Javiera", "Manuel", "Super Dick", "Ernesto",
 		            "Pedro", "Emiliano", "Juan Pablo", "Alicia", "Julio", "Sebastian", "Roberto", "Pablo",
@@ -25,32 +31,48 @@ public class Data {
 			 "JAC","Jeep","KIA","Jaguar","Lifan","Lexus","Mercedes Benz","MG","Mini","Nissan",
 			 "Peugeot","Porsche","Renault","Subaru","Suzuki","Toyota","Volkswagen","Volvo","Rolls Royce",
 			 "Lamborghini","Hummer"
-	 };
-	 //Metodos
+	 };//Fin Campos de Clase
+	
+	 /**
+	  * Metodo que inserta una marca aleatorea desde el campo marcas
+	  * @return Retorna la marca aleatoria para el objeto
+	  */
 	 public static String generaMarca() {
 		 Random r = new Random();
 		 int i = r.nextInt(marcas.length);
 		 String marca = marcas[i];
 		 return marca;
-	 }
+	 }//Fin Metodo
+	 
+	 /**
+	  * Metodo que inserta un nombre aleatorea desde el campo conductores
+	  * @return Retorna el nombre aleatorio para el objeto
+	  */
 	 public static String generaNombre() {
 		 Random r = new Random();
 		 int i = r.nextInt(conductores.length);
 		 String nombre = conductores[i];
 		 return nombre;
-	 }
+	 }//Fin Metodo
 	 
+	 /**
+	  * Metodo que inserta un color aleatoreo desde el campo colores
+	  * @return Retorna el nombre aleatorio para el objeto
+	  */
 	 public static String generaColor() {
 		 Random r = new Random();
 		 int i = r.nextInt(colores.length);
 		 String color = colores[i];
 		 return color;
-	 }
+	 }//Fin Metodo
 	 
+	 /**
+	  * Metodo que agrega un valor de armadura aleatorio entre 1 y 5
+	  * @return Retorna un nivel de armadura aleatorio para el objeto
+	  */
 	 public static int generaArmadura(){
 		 Random r = new Random();
 		 int armadura = r.nextInt(5)+1;
 		 return armadura;
-	 }
-	 
-}
+	 }//Fin Metodo
+}//Fin Clase
