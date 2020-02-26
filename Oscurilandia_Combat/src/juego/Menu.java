@@ -28,7 +28,7 @@ public class Menu {
 			Utiles.escribir("  3. Mostrar puntaje");
 			Utiles.escribir("  4. Salir");
 			
- //hola
+ 
 		try {	
 			int op = (int) Utiles.leerNumeros("Ingrese una opcion:", "sinlinea");
 
