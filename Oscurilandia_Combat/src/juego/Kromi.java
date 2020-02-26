@@ -16,7 +16,7 @@ public class Kromi extends Carro {
 
 	@Override
 	public String toString() {
-		return "Kromi [anioFab=" + anioFab + ", marca=" + marca + ", cantidadOcupantes=" + cantidadOcupantes
+		return "Kromi [patente="+patente+", anioFab=" + anioFab + ", marca=" + marca + ", cantidadOcupantes=" + cantidadOcupantes
 				+ ", fechaIngreso=" + fechaIngreso + ", posiciones=" + posiciones + "]";
 	}
 

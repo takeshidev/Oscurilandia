@@ -5,6 +5,7 @@ import juego.Utiles;
 
 //carro
 public class Carro {
+	protected String patente;
 	protected int cantidadOcupantes;
 	protected String fechaIngreso;
 	private Posicion posicion;
@@ -12,6 +13,7 @@ public class Carro {
 
 	// Constructor
 	public Carro(int cantidadOcupantes, String fechaIngreso) {
+		this.patente="HDP0"+Utiles.generaRandom(9, 1)+Utiles.generaRandom(9, 1);
 		this.cantidadOcupantes = Utiles.generaRandom(5, 1);
 		this.fechaIngreso = "200" +Integer.toString(Utiles.generaRandom(9, 1));
 	}
@@ -41,7 +43,7 @@ public class Carro {
 	// To String
 	@Override
 	public String toString() {
-		return "Carro [cantidadOcupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", x=" + ", y="
+		return "Carro [patente="+patente+", Ocupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", x=" + ", y="
 				+ "]";
 	}
 

@@ -9,7 +9,12 @@ public class Posicion {
 		this.y = y;
 	}
 
-//Gets and Sets
+	@Override
+	public String toString() {
+		return "Pos [x=" + x + ", y=" + y + "]";
+	}
+
+	// Gets and Sets
 	public int getX() {
 		return x;
 	}

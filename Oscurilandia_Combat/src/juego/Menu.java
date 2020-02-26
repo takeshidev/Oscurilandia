@@ -26,7 +26,8 @@ public class Menu {
 			Utiles.escribir("  1. Tirar huevo");
 			Utiles.escribir("  2. Mostrar tablero");
 			Utiles.escribir("  3. Mostrar puntaje");
-			Utiles.escribir("  4. Salir");
+			Utiles.escribir("  4. Mostrar enemigos");
+			Utiles.escribir("  5. Salir");
  
 		try {	
 			int op = (int) Utiles.leerNumeros("Ingrese una opcion:");
@@ -47,6 +48,17 @@ public class Menu {
 				tablero.mostrarPuntaje();
 				break;
 			case 4:
+				Utiles.escribir("Mostrando enemigos");
+				for (Carro carro : tablero.carros) {
+					for (Posicion posicion : carro.posiciones) {
+						System.out.println(posicion.toString()+""+ carro.toString());
+					}
+					
+				}
+				
+				
+				break;
+			case 5:
 				Utiles.escribir("Hasta la vista beibi...");
 				salir = true;
 				break;

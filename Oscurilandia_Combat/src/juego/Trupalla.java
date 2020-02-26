@@ -15,7 +15,7 @@ public class Trupalla extends Carro {
 
 	@Override
 	public String toString() {
-		return "Trupalla [armadura=" + armadura + ", nombreConductor=" + nombreConductor + ", cantidadOcupantes="
+		return "Trupalla [patente="+patente+", armadura=" + armadura + ", nombreConductor=" + nombreConductor + ", cantidadOcupantes="
 				+ cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", posiciones=" + posiciones + "]";
 	}
 
