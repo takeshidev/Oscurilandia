@@ -58,7 +58,7 @@ public class Menu {
 			case 4:
 				Utiles.escribir("Hasta la vista beibi...");
 				salir = true;
-				break;
+				break;	
 			default:
 				System.out.println("Debes ingresar una opcion entre 1 y 4");
 			}//switch

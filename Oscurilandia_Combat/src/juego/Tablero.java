@@ -14,6 +14,7 @@ public class Tablero {
 	ArrayList<Carro> carros = new ArrayList<Carro>();
 	ArrayList<Huevo> tiros = new ArrayList<Huevo>();
 	Marcador marcador = new Marcador();
+	final int PUNTAJE_MAXIMO = 122;
 	//Fin Campos de Clase
 	
 	/**
@@ -210,6 +211,9 @@ public class Tablero {
 					}
 				}
 			}
+		}
+		if (marcador.getPuntaje() >= PUNTAJE_MAXIMO) {
+			Utiles.escribir("FELICITACIONES GANASTE");
 		}
 	}
 
