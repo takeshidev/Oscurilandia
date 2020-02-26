@@ -23,7 +23,7 @@ public class Tablero {
 	/**
 	 * Muestra el tablero en pantalla
 	 */
-	public void mostrarTablero() {
+	public void mostrarTableroFull() {
 		for (int i = 0; i < tablero.length; i++) {
 			System.out.printf("%3s", i);
 		}
@@ -36,6 +36,22 @@ public class Tablero {
 		}
 	}// mostrarTablero
 
+	public void mostrarTableroHuevos() {
+		for (int i = 0; i < tablero.length; i++) {
+			System.out.printf("%3s", i);
+		}
+		System.out.println("");
+		for (int x = 0; x < tablero.length; x++) {
+			for (int y = 0; y < tablero[0].length; y++) {
+				if (tablero[x][y].contentEquals("[H]")) {
+					System.out.print(tablero[x][y]);
+				}else {
+					System.out.print("[-]");
+				}
+			}
+			System.out.println(x);// imprime el numero del eje vertical
+		}
+	}// mostrarTablero
 	/**
 	 * Genera objetos Kromis y los agrega al array de carros y su referencia al
 	 * tablero
@@ -58,7 +74,7 @@ public class Tablero {
 		}
 		kromi.setVida(3);
 		this.carros.add(kromi);
-		System.out.println(kromi.getVida() + " " + kromi.toString());
+		
 	}
 
 	/**
@@ -83,7 +99,7 @@ public class Tablero {
 		}
 		caguano.setVida(2);
 		this.carros.add(caguano);
-		System.out.println(caguano.getVida() + " " + caguano.toString());
+		
 	}
 
 	/**
@@ -107,7 +123,6 @@ public class Tablero {
 		trupalla.setVida(1);
 
 		this.carros.add(trupalla);
-		System.out.println(trupalla.getVida() + " " + trupalla.toString());
 	}
 
 	/**

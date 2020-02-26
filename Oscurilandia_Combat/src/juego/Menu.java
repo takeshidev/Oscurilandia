@@ -17,7 +17,7 @@ public class Menu {
 		for (int i = 0; i < 10; i++) {
 			tablero.ponerTrupallas();
 		}
-		tablero.mostrarTablero();
+		tablero.mostrarTableroHuevos();
 		
 //Inicio del menu----------------------------------------
 		boolean salir = false;
@@ -26,8 +26,8 @@ public class Menu {
 			Utiles.escribir("  1. Tirar huevo");
 			Utiles.escribir("  2. Mostrar tablero");
 			Utiles.escribir("  3. Mostrar puntaje");
-			Utiles.escribir("  4. Mostrar enemigos");
-			Utiles.escribir("  5. Salir");
+			Utiles.escribir("  4. Salir");
+			
  
 		try {	
 			int op = (int) Utiles.leerNumeros("Ingrese una opcion:", "sinlinea");
@@ -36,10 +36,12 @@ public class Menu {
 			case 1:
 				Utiles.escribir("Preparandose para lanzar huevo...");
 				tablero.tirarHuevo();
+				tablero.mostrarTableroHuevos();	
 				break;
 			case 2:
 				Utiles.escribir("Mostrando tablero");
-				tablero.mostrarTablero();
+				tablero.mostrarTableroFull();
+				
 				break;
 			case 3:
 				Utiles.escribir("Mostrando puntaje");
@@ -48,25 +50,16 @@ public class Menu {
 				tablero.mostrarPuntaje();
 				break;
 			case 4:
-				Utiles.escribir("Mostrando enemigos");
-				for (Carro carro : tablero.carros) {
-					for (Posicion posicion : carro.posiciones) {
-						System.out.println(posicion.toString()+""+ carro.toString());
-					}
-					
-				}
-				
-				
-				break;
-			case 5:
 				Utiles.escribir("Hasta la vista beibi...");
 				salir = true;
 				break;
+			default:
+				System.out.println("Debes ingresar una opcion entre 1 y 4");
 			}//switch
 		} catch (InputMismatchException e) {
-			Utiles.escribir("Ocurri� un error :(. Debes ingresar una opci�n.");
+			Utiles.escribir("Ocurrio un error :(. Debes ingresar una opcion.");
 		}
-			
+		
 		}//while
 	}// crearMenu
 
