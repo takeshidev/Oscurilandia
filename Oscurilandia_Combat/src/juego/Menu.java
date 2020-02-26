@@ -30,7 +30,7 @@ public class Menu {
 			Utiles.escribir("  5. Salir");
  
 		try {	
-			int op = (int) Utiles.leerNumeros("Ingrese una opcion:");
+			int op = (int) Utiles.leerNumeros("Ingrese una opcion:", "sinlinea");
 
 			switch (op) {
 			case 1:

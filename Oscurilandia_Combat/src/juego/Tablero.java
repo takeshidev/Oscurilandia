@@ -11,7 +11,7 @@ public class Tablero {
 	Marcador marcador = new Marcador();
 
 	public Tablero() {
-		//rellena el tablero con espacios vacios
+		// rellena el tablero con espacios vacios
 		for (int x = 0; x < tablero.length; x++) {
 			for (int y = 0; y < tablero[0].length; y++) {
 				tablero[x][y] = "[-]";
@@ -31,7 +31,7 @@ public class Tablero {
 			for (int y = 0; y < tablero[0].length; y++) {
 				System.out.print(tablero[x][y]);
 			}
-			System.out.println(x);//imprime el numero del eje vertical
+			System.out.println(x);// imprime el numero del eje vertical
 		}
 	}// mostrarTablero
 
@@ -113,8 +113,8 @@ public class Tablero {
 	 */
 	public void tirarHuevo() {
 		Huevo huevo = new Huevo();
-		huevo.setX(Utiles.leerNumeros("Ingrese coordenada X (vertical):"));
-		huevo.setY(Utiles.leerNumeros("Ingrese coordenada Y (horizontal):"));
+		huevo.setX(Utiles.leerNumeros("Ingrese coordenada X (vertical):","sinlinea"));
+		huevo.setY(Utiles.leerNumeros("Ingrese coordenada Y (horizontal):","sinlinea"));
 		verificaCoordinadas(huevo.getX(), huevo.getY());
 		tablero[huevo.getX()][huevo.getY()] = huevo.getCodigo();
 		tiros.add(huevo);
@@ -123,8 +123,15 @@ public class Tablero {
 		marcador.setIntentos(i);
 	}
 
+	public String impacto() {
+
+		
+		return "";
+	}
+
 	/**
 	 * Verifica un espacio en el tablero y retorna true si esta vacio
+	 * 
 	 * @param x
 	 * @param y
 	 * @return True si esta vacio

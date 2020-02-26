@@ -14,6 +14,9 @@ public class Utiles {
 	public static void escribir(String mensaje) {
 		System.out.println(mensaje);
 	}
+	public static void escribir(String mensaje, String sinlinea) {
+		System.out.print(mensaje);
+	}
 	
 	/**
 	 * Muestra un mensaje y solicita un numero 
@@ -22,6 +25,11 @@ public class Utiles {
 	 */
 	public static int leerNumeros(String mensaje) {
 		escribir(mensaje);
+		Scanner sc = new Scanner(System.in);
+		return sc.nextInt();
+	}
+	public static int leerNumeros(String mensaje, String sinlinea) {
+		escribir(mensaje, sinlinea);
 		Scanner sc = new Scanner(System.in);
 		return sc.nextInt();
 	}
