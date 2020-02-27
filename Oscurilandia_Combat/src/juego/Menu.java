@@ -1,6 +1,5 @@
 package juego;
 
-import java.awt.Toolkit;
 import java.util.*;
 /**
  * Clase que despliega el menu en pantalla

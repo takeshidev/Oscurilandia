@@ -1,5 +1,4 @@
 package juego;
-import java.util.Scanner;
 /**
  * Clase Main del programa, ejecuta el menu desde Clase Menu
  * @author Carlos Donoso, Takeshi Kita, Juan Carlos Tolorza
