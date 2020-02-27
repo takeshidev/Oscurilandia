@@ -140,10 +140,6 @@ public class Tablero {
 	 * Metodo que lanza un huevo solicitando coordenadas
 	 */
 	public void tirarHuevo() {
-		Posicion posicionselec;
-		int cuentacarro = 0;
-		int cuentapos = 0;
-		int posC, posP;
 		boolean ingresado = false;
 		Huevo huevo = new Huevo();
 		while (!ingresado) {
