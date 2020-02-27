@@ -1,9 +1,16 @@
 # Oscurilandia
 Juego oscurilanda. Ejercicio Awakelab
 
-Autores: Carlos Donoso, Juan Carlos Tolorza, Takeshi Kita
-
-La situacion...
-Hace unos meses, la “Cámara Secreta” de Oscurilandiadecidió implementar un nuevo sistema de votación para sus leyes, dado el aumento en la cantidad de representantes.
+## Contextualización al problema:
+  Hace unos meses, la “Cámara Secreta” de Oscurilandia decidió implementar un nuevo sistema de votación para sus leyes, dado el aumento en la cantidad de representantes.
 Esto generó vicios en el proceso, ya que muchos representantes, a fin de evitar aprobar una ley que no fuera de su gusto, se restaban de la votación, aumentando la cantidad en el universo de votos y dificultando con ello obtener el margen de aprobación necesario.Esto generó molestia en los ciudadanos de Oscurilandia, y están considerando seriamente invadir la “Cámara Secreta”, gracias a la ayuda de un grupo de superhéroes anónimos autodenominados “FirstLine”.En razón a la contingencia actual, los representantes han llamado a su grupo de acción, la élite de seguridad PKS, para restaurar el orden. Este grupo cuenta con tres tipos de vehículos para realizar operaciones:-Kromis:  Tienen  un  largo  de  tres  metros  cada  una,  y  son  utilizadas  para  transportar efectivos de la PKS.-Caguanos:Cada uno mide dos metros de largo, y su misión es lanzar confetis y dulces a quienes protestan.-Trupallas:Corresponden  a  efectivos  cibernéticos  con  tecnología  de  punta,  cada  uno ocupando en total un metro cuadrado de espacio, preparados para hacer entrar en razón a los manifestantes con la fuerza de sus ideas.
 Como  respuesta  a  las  acciones  de  la  PKS,  el  comando  FirstLine  solicita  que  se  desarrolle  un programa que los ayude a simular las posiciones de los efectivos alrededor de la Cámara Secreta, y de esta forma coordinar las acciones previas a la invasión.
+
+## Desarrollo del programa:
+  Como equipo comenzamos trabajando en la estructura del programa, diseñando un diagrama básico de como las diferentes estructuras deberian interactuar entre ellas. Luego de eso continuamos creando las Clases del programa, sus atributos, constructores y métodos si estos eran necesarios.
+La Clase Tablero es la quie contiene la mayor cantidad de código, ya que almacena todas las funciones necesarias relacionadas con el llenado del tablero, el disparo de los huevos, la creación de los diferentes objetos Carro, etc. Su desarrollo fue en conjunto como equipo, aportando ideas de como este podría armarse, a la vez que cubriamos situaciones donde el programa no corriera o se ejecutara eficientemente. 
+Finalmente nos dedicamos a mejorar el aspecto visual de como el programa debia lucir frente al usuario.
+
+## Uso del programa:
+  Una vez que este se inícia mostrará la matriz vacía ([-]) de 15x15 que contiene los diferentes tipos de Carro, y desplegará un menú de cuatro (4) opciones, donde el usuario deblerá ingresar por teclado la opción del menú que desea utilizar. La opción uno (1) corresponde al lanzamiento de un huevo a la matriz (pueden lanzarse cuantos se deseen), se le pedirá que ingrese las coordenadas que desee (entre 0 y 14), para luego desplegar la matriz con una "[H]" en el punto donde un huevo fue lanzado, si este le dió a algún tipo de Carro, se desplegará en pantalla que una Kromi, Trupalla o Caguano fue golpeado, asignandole un puntaje según la cantidad de golpes que pudo atinar (1 punto por Trupalla, 2 puntos por cada Caguano y 3 puntos por cada Kromi, además se asignarán puntos extras si se logra destruir por completo una Kromi o un Caguano). La opción dos (2) despliega la matriz en pantalla con la posición de todos los obejtos (incluyendo carros), esto por si el usuario desea conocer sus tirus y las posiciones de los Carros una vez termine el lanzamiento de huevos. Opción tres (3) muestra en pantalla el puntaje obtenido por el usuario, además de las coordenadas X e Y de los huevos lanzados. Por último la opción cuatro (4), permite al usuario salir del programa terminando su ejecución.
+
